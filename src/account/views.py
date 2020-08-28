@@ -34,13 +34,10 @@ def logout_view(request):
 
 
 def login_view(request):
-
 	context = {}
-
 	user = request.user
 	if user.is_authenticated: 
 		return redirect("home")
-
 	if request.POST:
 		form = AccountAuthenticationForm(request.POST)
 		if form.is_valid():
@@ -58,7 +55,7 @@ def login_view(request):
 	context['login_form'] = form
 
 	# print(form)
-	return render(request, "home/home.html", context)
+	return render(request, "account/login.html", context)
 
 
 
