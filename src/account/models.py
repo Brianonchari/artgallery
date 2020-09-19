@@ -9,23 +9,23 @@ class MyAccountManager(BaseUserManager):
     if not username:
       raise ValueError("Users must have a username")
 
-    if not full_name:
-      raise ValueError("This field cannot be blank")
-    if not artist_type:
-      raise ValueError("This field cannot be blank")
+    # if not full_name:
+    #   raise ValueError("This field cannot be blank")
+    # if not artist_type:
+    #   raise ValueError("This field cannot be blank")
 
-    if not bio:
-      raise ValueError("This field cannot be blank")
+    # if not bio:
+    #   raise ValueError("This field cannot be blank")
 
     user = self.model(
          email = self.normalize_email(email),
          username = username,
-         full_name = full_name,
-         artist_type = artist_type,
-         bio = bio,
-         website = website,
-         facebook = facebook,
-         instagram = instagram
+        #  full_name = full_name,
+        #  artist_type = artist_type,
+        #  bio = bio,
+        #  website = website,
+        #  facebook = facebook,
+        #  instagram = instagram
     )
 
     user.set_password(password)

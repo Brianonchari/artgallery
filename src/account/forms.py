@@ -13,11 +13,9 @@ class RegistrationForm(UserCreationForm):
 
 class AccountAuthenticationForm(forms.ModelForm):
   password = forms.CharField(label="Password", widget = forms.PasswordInput)
-
   class Meta:
     model = Account
     fields = ('email','password')
-
     def clean(self):
       if self.is_valid():
         email = self.cleaned_data['email']
